@@ -11,3 +11,5 @@ git clone https://github.com/erwaen/my-nvim-config.git ~/.config/nvim
 ```
 
 Btw, I'm trying to use Vim now!
+
+You think I'm wasting my time? Maybe.
