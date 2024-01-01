@@ -11,4 +11,4 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- I use this because if you really do control C in insert mode, the gh copilot suggestions doesn't disappear
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, {})

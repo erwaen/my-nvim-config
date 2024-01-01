@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
         end,
         requires = { "nvim-lua/plenary.nvim" },
     })
+
+    use("tpope/vim-commentary")
 end)
