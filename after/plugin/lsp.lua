@@ -24,7 +24,7 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+    mapping = cmp_mappings
 })
 
 lsp.set_preferences({
@@ -58,4 +58,13 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+require('lspconfig').lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {'vim'}
+            }
+        }
+    }
+})
 
