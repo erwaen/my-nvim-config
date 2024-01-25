@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
-           vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme rose-pine')
         end
     })
 
@@ -25,7 +25,8 @@ return require('packer').startup(function(use)
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
-        end, }
+        end,
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -33,7 +34,16 @@ return require('packer').startup(function(use)
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason.nvim',
+                opts = {
+                    ensure_installed = {
+                        "black",
+                        "mypy",
+                        "ruff",
+                        "pyright",
+                    },
+                },
+            },
             { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
@@ -59,6 +69,8 @@ return require('packer').startup(function(use)
         end,
         requires = { "nvim-lua/plenary.nvim" },
     })
+
+    use( "jay-babu/mason-null-ls.nvim")
 
     use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
