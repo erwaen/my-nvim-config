@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require('lspconfig')
 
 lsp.preset("recommended")
 
@@ -8,6 +9,10 @@ lsp.ensure_installed({
     'lua_ls',
     'dockerls',
     'pyright',
+    'yamlls',
+    'azure_pipelines_ls',
+    'gopls',
+    'htmx'
 })
 
 -- Fix Undefined global 'vim'
@@ -55,7 +60,18 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lspconfig.azure_pipelines_ls.setup({
+    settings = {
+        yaml = {
+            keyOrdering = false
+        }
+    }
+})
+
+lspconfig.htmx.setup{}
+
 lsp.setup()
+
 
 vim.diagnostic.config({
     virtual_text = true
