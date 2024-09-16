@@ -59,7 +59,6 @@ return require("packer").startup(function(use)
         },
     })
 
-    -- use("github/copilot.vim")
 
     use({
         "nvimtools/none-ls.nvim",
@@ -73,4 +72,5 @@ return require("packer").startup(function(use)
 
     use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
+    use("github/copilot.vim")
 end)

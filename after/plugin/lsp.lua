@@ -68,6 +68,8 @@ lspconfig.azure_pipelines_ls.setup({
     }
 })
 
+lspconfig.astro.setup{}
+
 lspconfig.htmx.setup{}
 
 lsp.setup()
