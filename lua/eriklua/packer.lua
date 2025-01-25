@@ -72,13 +72,5 @@ return require("packer").startup(function(use)
 
     use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
-    use(
-        {
-            "nvzone/typr",
-            dependencies = "nvzone/volt",
-            opts = {},
-            cmd = { "Typr", "TyprStats" },
-        }
-    )
     -- use("github/copilot.vim")
 end)
