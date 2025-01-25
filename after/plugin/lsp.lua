@@ -4,7 +4,6 @@ local lspconfig = require('lspconfig')
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
     'rust_analyzer',
     'lua_ls',
     'dockerls',
@@ -12,7 +11,8 @@ lsp.ensure_installed({
     'yamlls',
     'azure_pipelines_ls',
     'gopls',
-    'htmx'
+    'htmx',
+    'ts_ls',
 })
 
 -- Fix Undefined global 'vim'

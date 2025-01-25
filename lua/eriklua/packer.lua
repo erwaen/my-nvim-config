@@ -7,7 +7,7 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
-    use({ "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } }
+    use({ "nvim-telescope/telescope.nvim", tag = "0.1.8", requires = { { "nvim-lua/plenary.nvim" } }
     })
 
     use({
@@ -72,5 +72,13 @@ return require("packer").startup(function(use)
 
     use("tpope/vim-commentary")
     use("tpope/vim-fugitive")
-    use("github/copilot.vim")
+    use(
+        {
+            "nvzone/typr",
+            dependencies = "nvzone/volt",
+            opts = {},
+            cmd = { "Typr", "TyprStats" },
+        }
+    )
+    -- use("github/copilot.vim")
 end)
